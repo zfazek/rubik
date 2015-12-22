@@ -65,11 +65,6 @@ var rotations = [
 
 $(document).keypress(function(event) {
     switch (String.fromCharCode(event.which)) {
-        case "q":
-            init_cube();
-            print_cube();
-            break;
-
         case "u":
             rotate(u_rotation);
             print_cube();
@@ -242,7 +237,29 @@ $(document).keypress(function(event) {
 });
 
 function readyFn() {
+    $("#button_solve").click(solve);
+    $("#button_shuffle").click(shuffle);
     init_cube();
+    print_cube();
+}
+
+function solve() {
+    init_cube();
+    print_cube();
+}
+
+function shuffle() {
+    var size = rotations.length;
+    for (var i = 0; i < $("#select_rotations").val(); i++) {
+        var random = Math.floor((Math.random() * size));
+        if (Math.random() < 0.5) {
+            rotate(rotations[random]);
+        } else {
+            rotate(rotations[random]);
+            rotate(rotations[random]);
+            rotate(rotations[random]);
+        }
+    }
     print_cube();
 }
 
@@ -253,6 +270,26 @@ function init_cube() {
     }
 }
 
+function is_solved() {
+    for (var i = 0; i < 54; i++) {
+        if (cube[i] != Math.floor(i / 9)) {
+            return false;
+        }
+    }
+    return true;
+}
+
+function is_solved_anyhow() {
+    for (var i = 0; i < 6; i++) {
+        for (var j = 1; j < 9; j++) {
+            if (cube[i * 9 + j] != cube[i * 9]) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
 function rotate(rotation) {
     var temp_cube = [];
     for (var i = 0; i < 54; i++) {
@@ -261,11 +298,22 @@ function rotate(rotation) {
     for (var i = 0; i < rotation.length; i++) {
         cube[rotation[i++]] = temp_cube[rotation[i]];
     }
+    if (is_solved_anyhow()) {
+        print_cube();
+        alert("Solved!");
+    }
 }
 
 function print_cube() {
     function get_color(c) {
-        var colors = ["white", "red", "blue", "orange", "green", "yellow"];
+        var colors = [
+            "yellow",
+            "DarkOrange",
+            "blue",
+            "red",
+            "green",
+            "white"
+            ];
         return "<td style=\"background:" + colors[cube[c]] + ";\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>";
 
     }
@@ -280,23 +328,23 @@ function print_cube() {
     var table = "";
     table += "<table border=\"0\">";
     table += "<tr>";
-    table += empty_line;
+    table += "<td></td><td></td><td>B'</td>";
     table += get_one_line(0, 1, 2);
-    table += empty_line;
+    table += "<td>B</td><td></td><td></td>";
     table += empty_line;
     table += "</tr>";
 
     table += "<tr>";
-    table += empty_line;
+    table += "<td></td><td></td><td>S</td>";
     table += get_one_line(3, 4, 5);
-    table += empty_line;
+    table += "<td>S'</td><td></td><td></td>";
     table += empty_line;
     table += "</tr>";
 
     table += "<tr>";
-    table += empty_line;
+    table += "<td></td><td></td><td>F</td>";
     table += get_one_line(6, 7, 8);
-    table += empty_line;
+    table += "<td>F'</td><td></td><td></td>";
     table += empty_line;
     table += "</tr>";
 
@@ -343,5 +391,9 @@ function print_cube() {
     table += "</tr>";
     table += "</table>";
 
-    $("#table").html(table);
+    $("#table_2d").html(table);
+}
+
+function log(line) {
+    $("#tmp").html(line);
 }

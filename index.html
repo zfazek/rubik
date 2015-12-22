@@ -2,15 +2,24 @@
 <html>
 
     <style>
-        table {
+        #table_2d {
             background-color: gray;
-            font-size: 100%;
-        }
-        h1, #buttons {
+            font-size: 200%;
             text-align: center;
         }
+        h1, button {
+            text-align: center;
+            font-size: 200%;
+        }
+        table {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #buttons {
+        }
         #canvas {
-            background-color: SaddleBrown;
+            background-color: gray;
             display: block;
             margin: 0 auto;
             border: 1px solid black;
@@ -19,10 +28,6 @@
 
     <head>
         <title>Rubik Cube</title>
-        <!-- <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-            <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-                -->
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="main.js"></script>
 <script>
@@ -33,12 +38,36 @@
 <body>
     <h1>Rubik Cube</h1>
     <div id="buttons">
+        <table>
+            <tr>
+                <td>
+                    <select name="select_rotations" id="select_rotations">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="100" selected>100</option>
+                    </select>
+                </td>
+                <td>
+                    <button id="button_shuffle">Shuffle</button>
+                </td>
+                <td>
+                    <button id="button_solve">Solve</button>
+                </td>
+            </tr>
+        </table>
     </div>
+    <p>
     <!--    <canvas id="canvas" width="600" height="400"></canvas> -->
-    <div id="idx"></div>
+    <div id="table_2d"></div>
     <div id="tmp"></div>
-    <div id="coord"></div>
-    <div id="table"></div>
 </body>
 </html>
 
