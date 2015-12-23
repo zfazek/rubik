@@ -156,7 +156,6 @@ function x_keypressed() {
             rotate(m_rotation);
             rotate(r_rotation);
             print_cube();
-            check_solved();
 }
 
 function X_keypressed() {
@@ -166,7 +165,6 @@ function X_keypressed() {
             rotate(r_rotation);
             rotate(r_rotation);
             print_cube();
-            check_solved();
 }
 
 function y_keypressed() {
@@ -178,7 +176,6 @@ function y_keypressed() {
             rotate(d_rotation);
             rotate(d_rotation);
             print_cube();
-            check_solved();
 }
 
 function Y_keypressed() {
@@ -188,7 +185,6 @@ function Y_keypressed() {
             rotate(e_rotation);
             rotate(d_rotation);
             print_cube();
-            check_solved();
 }
 
 $(document).keydown(function(event) {
@@ -326,7 +322,6 @@ $(document).keypress(function(event) {
             rotate(b_rotation);
             rotate(b_rotation);
             print_cube();
-            check_solved();
             break;
 
         case "Z":
@@ -338,7 +333,6 @@ $(document).keypress(function(event) {
             rotate(s_rotation);
             rotate(b_rotation);
             print_cube();
-            check_solved();
             break;
 
     }
