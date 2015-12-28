@@ -4,17 +4,20 @@
     <style>
         #table_2d {
             background-color: gray;
-            font-size: 150%;
+            font-size: 250%;
             text-align: center;
         }
         #keys {
             background-color: white;
-            font-size: 130%;
+            font-size: 100%;
             text-align: center;
         }
         h1, button {
             text-align: center;
             font-size: 200%;
+            border: 1px solid black;
+            border-radius: 10px;
+            width: 100%;
         }
         table {
             text-align: center;
@@ -90,7 +93,7 @@
                     </td>
                     <td>
                         <div id="keys">
-                            <table border=\"1\">
+                            <table>
                                 <tr>
                                     <td><button id="button_r">r</button></td>
                                     <td><button id="button_R">R</button></td>
@@ -116,8 +119,12 @@
                                     <td><button id="button_B">B</button></td>
                                 </tr>
                                 <tr>
-                                    <td><button id="button_right">right</button></td>
+                                    <td><button id="button_m">m</button></td>
+                                    <td><button id="button_M">M</button></td>
+                                </tr>
+                                <tr>
                                     <td><button id="button_left">left</button></td>
+                                    <td><button id="button_right">right</button></td>
                                 </tr>
                                 <tr>
                                     <td><button id="button_up">up</button></td>
@@ -128,6 +135,18 @@
                     </td>
                 </tr>
             </table>
+            <p>
+            <div id="text_bottom">
+                Use the keyboard to rotate the cube pressing the letter of the rotation using the standart notation. You can read about the notation here:
+                <a href="https://www.speedsolving.com/wiki/index.php/3x3x3_notation" target="_blank">https://www.speedsolving.com/wiki/index.php/3x3x3_notation</a>
+                <p>
+                    Clockwise rotation: normal key
+                <p>
+                    Anti clockwise rotation: Upper case key (use the SHIFT key)
+            <p>
+                The most common rotations have buttons on the right to be compatible with devices without keyboard (smart phones, tablets)
+            </div>
+            <p>
             <div id="tmp"></div>
         </body>
     </html>

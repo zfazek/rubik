@@ -64,276 +64,288 @@ var rotations = [
 ];
 
 function r_keypressed() {
-            rotate(r_rotation);
-            print_cube();
-            check_solved();
+    rotate(r_rotation);
+    print_cube();
+    check_solved();
 }
 
 function R_keypressed() {
-            rotate(r_rotation);
-            rotate(r_rotation);
-            rotate(r_rotation);
-            print_cube();
-            check_solved();
+    rotate(r_rotation);
+    rotate(r_rotation);
+    rotate(r_rotation);
+    print_cube();
+    check_solved();
 }
 
 function u_keypressed() {
-            rotate(u_rotation);
-            print_cube();
-            check_solved();
+    rotate(u_rotation);
+    print_cube();
+    check_solved();
 }
 
 function U_keypressed() {
-            rotate(u_rotation);
-            rotate(u_rotation);
-            rotate(u_rotation);
-            print_cube();
-            check_solved();
+    rotate(u_rotation);
+    rotate(u_rotation);
+    rotate(u_rotation);
+    print_cube();
+    check_solved();
 }
 
 function f_keypressed() {
-            rotate(f_rotation);
-            print_cube();
-            check_solved();
+    rotate(f_rotation);
+    print_cube();
+    check_solved();
 }
 
 function F_keypressed() {
-            rotate(f_rotation);
-            rotate(f_rotation);
-            rotate(f_rotation);
-            print_cube();
-            check_solved();
+    rotate(f_rotation);
+    rotate(f_rotation);
+    rotate(f_rotation);
+    print_cube();
+    check_solved();
 }
 
 function l_keypressed() {
-            rotate(l_rotation);
-            print_cube();
-            check_solved();
+    rotate(l_rotation);
+    print_cube();
+    check_solved();
 }
 
 function L_keypressed() {
-            rotate(l_rotation);
-            rotate(l_rotation);
-            rotate(l_rotation);
-            print_cube();
-            check_solved();
+    rotate(l_rotation);
+    rotate(l_rotation);
+    rotate(l_rotation);
+    print_cube();
+    check_solved();
 }
 
 function d_keypressed() {
-            rotate(d_rotation);
-            print_cube();
-            check_solved();
+    rotate(d_rotation);
+    print_cube();
+    check_solved();
 }
 
 function D_keypressed() {
-            rotate(d_rotation);
-            rotate(d_rotation);
-            rotate(d_rotation);
-            print_cube();
-            check_solved();
+    rotate(d_rotation);
+    rotate(d_rotation);
+    rotate(d_rotation);
+    print_cube();
+    check_solved();
 }
 
 function b_keypressed() {
-            rotate(b_rotation);
-            print_cube();
-            check_solved();
+    rotate(b_rotation);
+    print_cube();
+    check_solved();
 }
 
 function B_keypressed() {
-            rotate(b_rotation);
-            rotate(b_rotation);
-            rotate(b_rotation);
-            print_cube();
-            check_solved();
+    rotate(b_rotation);
+    rotate(b_rotation);
+    rotate(b_rotation);
+    print_cube();
+    check_solved();
+}
+
+function m_keypressed() {
+    rotate(m_rotation);
+    print_cube();
+    check_solved();
+}
+
+function M_keypressed() {
+    rotate(m_rotation);
+    rotate(m_rotation);
+    rotate(m_rotation);
+    print_cube();
+    check_solved();
 }
 
 function x_keypressed() {
-            rotate(l_rotation);
-            rotate(l_rotation);
-            rotate(l_rotation);
-            rotate(m_rotation);
-            rotate(m_rotation);
-            rotate(m_rotation);
-            rotate(r_rotation);
-            print_cube();
+    rotate(l_rotation);
+    rotate(l_rotation);
+    rotate(l_rotation);
+    rotate(m_rotation);
+    rotate(m_rotation);
+    rotate(m_rotation);
+    rotate(r_rotation);
+    print_cube();
 }
 
 function X_keypressed() {
-            rotate(l_rotation);
-            rotate(m_rotation);
-            rotate(r_rotation);
-            rotate(r_rotation);
-            rotate(r_rotation);
-            print_cube();
+    rotate(l_rotation);
+    rotate(m_rotation);
+    rotate(r_rotation);
+    rotate(r_rotation);
+    rotate(r_rotation);
+    print_cube();
 }
 
 function y_keypressed() {
-            rotate(u_rotation);
-            rotate(e_rotation);
-            rotate(e_rotation);
-            rotate(e_rotation);
-            rotate(d_rotation);
-            rotate(d_rotation);
-            rotate(d_rotation);
-            print_cube();
+    rotate(u_rotation);
+    rotate(e_rotation);
+    rotate(e_rotation);
+    rotate(e_rotation);
+    rotate(d_rotation);
+    rotate(d_rotation);
+    rotate(d_rotation);
+    print_cube();
 }
 
 function Y_keypressed() {
-            rotate(u_rotation);
-            rotate(u_rotation);
-            rotate(u_rotation);
-            rotate(e_rotation);
-            rotate(d_rotation);
-            print_cube();
+    rotate(u_rotation);
+    rotate(u_rotation);
+    rotate(u_rotation);
+    rotate(e_rotation);
+    rotate(d_rotation);
+    print_cube();
 }
 
 $(document).keydown(function(event) {
     switch (event.keyCode) {
     case 37: // left (y)
         y_keypressed();
-            break;
+        break;
 
-        case 39: // right (Y)
-            Y_keypressed();
-            break;
+    case 39: // right (Y)
+        Y_keypressed();
+        break;
 
-        case 38: // up (x)
-            x_keypressed()
-            break;
+    case 38: // up (x)
+        x_keypressed()
+        break;
 
-        case 40: // down (X)
-            X_keypressed();
-            break;
+    case 40: // down (X)
+        X_keypressed();
+        break;
     }
 });
 
 $(document).keypress(function(event) {
     switch (String.fromCharCode(event.which)) {
-        case "u":
-            u_keypressed();
-            break;
+    case "u":
+        u_keypressed();
+        break;
 
-        case "U":
-            U_keypressed();
-            break;
+    case "U":
+        U_keypressed();
+        break;
 
-        case "r":
-            r_keypressed();
-            break;
+    case "r":
+        r_keypressed();
+        break;
 
-        case "R":
-            R_keypressed();
-            break;
+    case "R":
+        R_keypressed();
+        break;
 
-        case "m":
-            rotate(m_rotation);
-            print_cube();
-            check_solved();
-            break;
+    case "m":
+        m_keypressed();
+        break;
 
-        case "M":
-            rotate(m_rotation);
-            rotate(m_rotation);
-            rotate(m_rotation);
-            print_cube();
-            check_solved();
-            break;
+    case "M":
+        M_keypressed();
+        break;
 
-        case "f":
-            f_keypressed();
-            break;
+    case "f":
+        f_keypressed();
+        break;
 
-        case "F":
-            F_keypressed();
-            break;
+    case "F":
+        F_keypressed();
+        break;
 
-        case "l":
-            l_keypressed();
-            break;
+    case "l":
+        l_keypressed();
+        break;
 
-        case "L":
-            L_keypressed();
-            break;
+    case "L":
+        L_keypressed();
+        break;
 
-        case "d":
-            d_keypressed();
-            break;
+    case "d":
+        d_keypressed();
+        break;
 
-        case "D":
-            D_keypressed();
-            break;
+    case "D":
+        D_keypressed();
+        break;
 
-        case "b":
-            b_keypressed();
-            break;
+    case "b":
+        b_keypressed();
+        break;
 
-        case "B":
-            B_keypressed();
-            break;
+    case "B":
+        B_keypressed();
+        break;
 
-        case "e":
-            rotate(e_rotation);
-            print_cube();
-            check_solved();
-            break;
+    case "e":
+        rotate(e_rotation);
+        print_cube();
+        check_solved();
+        break;
 
-        case "E":
-            rotate(e_rotation);
-            rotate(e_rotation);
-            rotate(e_rotation);
-            print_cube();
-            check_solved();
-            break;
+    case "E":
+        rotate(e_rotation);
+        rotate(e_rotation);
+        rotate(e_rotation);
+        print_cube();
+        check_solved();
+        break;
 
-        case "s":
-            rotate(s_rotation);
-            print_cube();
-            check_solved();
-            break;
+    case "s":
+        rotate(s_rotation);
+        print_cube();
+        check_solved();
+        break;
 
-        case "S":
-            rotate(s_rotation);
-            rotate(s_rotation);
-            rotate(s_rotation);
-            print_cube();
-            check_solved();
-            break;
+    case "S":
+        rotate(s_rotation);
+        rotate(s_rotation);
+        rotate(s_rotation);
+        print_cube();
+        check_solved();
+        break;
 
-        case "x":
-            x_keypressed();
-            break;
+    case "x":
+    case "k":
+        x_keypressed();
+        break;
 
-        case "X":
-            X_keypressed();
-            break;
+    case "X":
+    case "j":
+        X_keypressed();
+        break;
 
-        case "y":
-            y_keypressed();
-            break;
+    case "y":
+    case "h":
+        y_keypressed();
+        break;
 
-        case "Y":
-            Y_keypressed();
-            break;
+    case "Y":
+    case "H":
+        Y_keypressed();
+        break;
 
-        case "z":
-            rotate(f_rotation);
-            rotate(s_rotation);
-            rotate(b_rotation);
-            rotate(b_rotation);
-            rotate(b_rotation);
-            print_cube();
-            break;
+    case "z":
+        rotate(f_rotation);
+        rotate(s_rotation);
+        rotate(b_rotation);
+        rotate(b_rotation);
+        rotate(b_rotation);
+        print_cube();
+        break;
 
-        case "Z":
-            rotate(f_rotation);
-            rotate(f_rotation);
-            rotate(f_rotation);
-            rotate(s_rotation);
-            rotate(s_rotation);
-            rotate(s_rotation);
-            rotate(b_rotation);
-            print_cube();
-            break;
+    case "Z":
+        rotate(f_rotation);
+        rotate(f_rotation);
+        rotate(f_rotation);
+        rotate(s_rotation);
+        rotate(s_rotation);
+        rotate(s_rotation);
+        rotate(b_rotation);
+        print_cube();
+        break;
 
     }
 });
@@ -353,6 +365,8 @@ function readyFn() {
     $("#button_D").click(D_keypressed);
     $("#button_b").click(b_keypressed);
     $("#button_B").click(B_keypressed);
+    $("#button_m").click(m_keypressed);
+    $("#button_M").click(M_keypressed);
     $("#button_left").click(y_keypressed);
     $("#button_right").click(Y_keypressed);
     $("#button_up").click(x_keypressed);
@@ -427,41 +441,16 @@ function print_cube() {
             "green",
             "white"
             ];
-        line += "<td class=\"left-border\" style=\"background:" + colors[cube[a]] + ";\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>";
-        line += "<td style=\"background:" + colors[cube[b]] + ";\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>";
-        line += "<td class=\"right-border\" style=\"background:" + colors[cube[c]] + ";\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>";
-        return line;
+            line += "<td class=\"left-border\" style=\"background:" + colors[cube[a]] + ";\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>";
+            line += "<td style=\"background:" + colors[cube[b]] + ";\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>";
+            line += "<td class=\"right-border\" style=\"background:" + colors[cube[c]] + ";\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>";
+            return line;
     }
     var empty_line = "<td></td><td></td><td></td>";
     var table = "";
     table += "<table border=\"0\">";
 
     table += "<tr class=\"top-border\">";
-    table += empty_line;
-    table += empty_line;
-    table += get_one_line(44, 43, 42);
-    table += empty_line;
-    table += empty_line;
-    table += "</tr>";
-
-    table += "<tr class=\"top-border\">";
-    table += empty_line;
-    table += empty_line;
-    table += get_one_line(41, 40, 39);
-    table += empty_line;
-    table += empty_line;
-    table += "</tr>";
-
-    table += "<tr class=\"top-border\">";
-    table += empty_line;
-    table += empty_line;
-    table += get_one_line(38, 37, 36);
-    table += empty_line;
-    table += empty_line;
-    table += "</tr>";
-
-    table += "<tr class=\"top-border\">";
-    table += empty_line;
     table += empty_line;
     table += get_one_line(0, 1, 2);
     table += empty_line;
@@ -470,7 +459,6 @@ function print_cube() {
 
     table += "<tr>";
     table += empty_line;
-    table += empty_line;
     table += get_one_line(3, 4, 5);
     table += empty_line;
     table += empty_line;
@@ -478,14 +466,12 @@ function print_cube() {
 
     table += "<tr>";
     table += empty_line;
-    table += empty_line;
     table += get_one_line(6, 7, 8);
     table += empty_line;
     table += empty_line;
     table += "</tr>";
 
     table += "<tr class=\"top-border\">";
-    table += get_one_line(36, 37, 38);
     table += get_one_line(9, 10, 11);
     table += get_one_line(18, 19, 20);
     table += get_one_line(27, 28, 29);
@@ -493,7 +479,6 @@ function print_cube() {
     table += "</tr>";
 
     table += "<tr>";
-    table += get_one_line(39, 40, 41);
     table += get_one_line(12, 13, 14);
     table += get_one_line(21, 22, 23);
     table += get_one_line(30, 31, 32);
@@ -501,7 +486,6 @@ function print_cube() {
     table += "</tr>";
 
     table += "<tr class=\"bottom-border\">";
-    table += get_one_line(42, 43, 44);
     table += get_one_line(15, 16, 17);
     table += get_one_line(24, 25, 26);
     table += get_one_line(33, 34, 35);
@@ -510,14 +494,12 @@ function print_cube() {
 
     table += "<tr>";
     table += empty_line;
-    table += empty_line;
     table += get_one_line(45, 46, 47);
     table += empty_line;
     table += empty_line;
     table += "</tr>";
 
     table += "<tr>";
-    table += empty_line;
     table += empty_line;
     table += get_one_line(48, 49, 50);
     table += empty_line;
@@ -526,32 +508,7 @@ function print_cube() {
 
     table += "<tr>";
     table += empty_line;
-    table += empty_line;
     table += get_one_line(51, 52, 53);
-    table += empty_line;
-    table += empty_line;
-    table += "</tr>";
-
-    table += "<tr class=\"top-border\">";
-    table += empty_line;
-    table += empty_line;
-    table += get_one_line(44, 43, 42);
-    table += empty_line;
-    table += empty_line;
-    table += "</tr>";
-
-    table += "<tr class=\"top-border\">";
-    table += empty_line;
-    table += empty_line;
-    table += get_one_line(41, 40, 39);
-    table += empty_line;
-    table += empty_line;
-    table += "</tr>";
-
-    table += "<tr class=\"top-border\">";
-    table += empty_line;
-    table += empty_line;
-    table += get_one_line(38, 37, 36);
     table += empty_line;
     table += empty_line;
     table += "</tr>";
