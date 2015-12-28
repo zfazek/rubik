@@ -1,4 +1,6 @@
 var cube = [];
+//var canvas;
+//var ctx;
 
 var u_rotation = [ 
     0, 6, 1, 3, 2, 0, 5, 1, 8, 2, 7, 5, 6, 8, 3, 7,
@@ -201,156 +203,9 @@ function Y_keypressed() {
     print_cube();
 }
 
-$(document).keydown(function(event) {
-    switch (event.keyCode) {
-    case 37: // left (y)
-        y_keypressed();
-        break;
-
-    case 39: // right (Y)
-        Y_keypressed();
-        break;
-
-    case 38: // up (x)
-        x_keypressed()
-        break;
-
-    case 40: // down (X)
-        X_keypressed();
-        break;
-    }
-});
-
-$(document).keypress(function(event) {
-    switch (String.fromCharCode(event.which)) {
-    case "u":
-        u_keypressed();
-        break;
-
-    case "U":
-        U_keypressed();
-        break;
-
-    case "r":
-        r_keypressed();
-        break;
-
-    case "R":
-        R_keypressed();
-        break;
-
-    case "m":
-        m_keypressed();
-        break;
-
-    case "M":
-        M_keypressed();
-        break;
-
-    case "f":
-        f_keypressed();
-        break;
-
-    case "F":
-        F_keypressed();
-        break;
-
-    case "l":
-        l_keypressed();
-        break;
-
-    case "L":
-        L_keypressed();
-        break;
-
-    case "d":
-        d_keypressed();
-        break;
-
-    case "D":
-        D_keypressed();
-        break;
-
-    case "b":
-        b_keypressed();
-        break;
-
-    case "B":
-        B_keypressed();
-        break;
-
-    case "e":
-        rotate(e_rotation);
-        print_cube();
-        check_solved();
-        break;
-
-    case "E":
-        rotate(e_rotation);
-        rotate(e_rotation);
-        rotate(e_rotation);
-        print_cube();
-        check_solved();
-        break;
-
-    case "s":
-        rotate(s_rotation);
-        print_cube();
-        check_solved();
-        break;
-
-    case "S":
-        rotate(s_rotation);
-        rotate(s_rotation);
-        rotate(s_rotation);
-        print_cube();
-        check_solved();
-        break;
-
-    case "x":
-    case "k":
-        x_keypressed();
-        break;
-
-    case "X":
-    case "j":
-        X_keypressed();
-        break;
-
-    case "y":
-    case "h":
-        y_keypressed();
-        break;
-
-    case "Y":
-    case "H":
-        Y_keypressed();
-        break;
-
-    case "z":
-        rotate(f_rotation);
-        rotate(s_rotation);
-        rotate(b_rotation);
-        rotate(b_rotation);
-        rotate(b_rotation);
-        print_cube();
-        break;
-
-    case "Z":
-        rotate(f_rotation);
-        rotate(f_rotation);
-        rotate(f_rotation);
-        rotate(s_rotation);
-        rotate(s_rotation);
-        rotate(s_rotation);
-        rotate(b_rotation);
-        print_cube();
-        break;
-
-    }
-});
-
 function readyFn() {
+    canvas = document.getElementById("canvas");
+    ctx = canvas.getContext("2d");
     $("#button_solve").click(solve);
     $("#button_shuffle").click(shuffle);
     $("#button_r").click(r_keypressed);
@@ -371,6 +226,156 @@ function readyFn() {
     $("#button_right").click(Y_keypressed);
     $("#button_up").click(x_keypressed);
     $("#button_down").click(X_keypressed);
+
+    $(document).keydown(function(event) {
+        switch (event.keyCode) {
+        case 37: // left (y)
+            y_keypressed();
+            break;
+
+        case 39: // right (Y)
+            Y_keypressed();
+            break;
+
+        case 38: // up (x)
+            x_keypressed()
+            break;
+
+        case 40: // down (X)
+            X_keypressed();
+            break;
+        }
+    });
+
+    $(document).keypress(function(event) {
+        switch (String.fromCharCode(event.which)) {
+        case "u":
+            u_keypressed();
+            break;
+
+        case "U":
+            U_keypressed();
+            break;
+
+        case "r":
+            r_keypressed();
+            break;
+
+        case "R":
+            R_keypressed();
+            break;
+
+        case "m":
+            m_keypressed();
+            break;
+
+        case "M":
+            M_keypressed();
+            break;
+
+        case "f":
+            f_keypressed();
+            break;
+
+        case "F":
+            F_keypressed();
+            break;
+
+        case "l":
+            l_keypressed();
+            break;
+
+        case "L":
+            L_keypressed();
+            break;
+
+        case "d":
+            d_keypressed();
+            break;
+
+        case "D":
+            D_keypressed();
+            break;
+
+        case "b":
+            b_keypressed();
+            break;
+
+        case "B":
+            B_keypressed();
+            break;
+
+        case "e":
+            rotate(e_rotation);
+            print_cube();
+            check_solved();
+            break;
+
+        case "E":
+            rotate(e_rotation);
+            rotate(e_rotation);
+            rotate(e_rotation);
+            print_cube();
+            check_solved();
+            break;
+
+        case "s":
+            rotate(s_rotation);
+            print_cube();
+            check_solved();
+            break;
+
+        case "S":
+            rotate(s_rotation);
+            rotate(s_rotation);
+            rotate(s_rotation);
+            print_cube();
+            check_solved();
+            break;
+
+        case "x":
+        case "k":
+            x_keypressed();
+            break;
+
+        case "X":
+        case "j":
+            X_keypressed();
+            break;
+
+        case "y":
+        case "h":
+            y_keypressed();
+            break;
+
+        case "Y":
+        case "H":
+            Y_keypressed();
+            break;
+
+        case "z":
+            rotate(f_rotation);
+            rotate(s_rotation);
+            rotate(b_rotation);
+            rotate(b_rotation);
+            rotate(b_rotation);
+            print_cube();
+            break;
+
+        case "Z":
+            rotate(f_rotation);
+            rotate(f_rotation);
+            rotate(f_rotation);
+            rotate(s_rotation);
+            rotate(s_rotation);
+            rotate(s_rotation);
+            rotate(b_rotation);
+            print_cube();
+            break;
+
+        }
+    });
+
     init_cube();
     print_cube();
 }
@@ -431,6 +436,10 @@ function rotate(rotation) {
 }
 
 function print_cube() {
+    draw_cube();
+}
+
+function print_cube_2d() {
     function get_one_line(a, b, c) {
         var line = "";
         var colors = [
