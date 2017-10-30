@@ -1,6 +1,4 @@
 var cube = [];
-//var canvas;
-//var ctx;
 
 var u_rotation = [ 
     0, 6, 1, 3, 2, 0, 5, 1, 8, 2, 7, 5, 6, 8, 3, 7,
@@ -437,93 +435,6 @@ function rotate(rotation) {
 
 function print_cube() {
     draw_cube();
-}
-
-function print_cube_2d() {
-    function get_one_line(a, b, c) {
-        var line = "";
-        var colors = [
-            "yellow",
-            "DarkOrange",
-            "blue",
-            "red",
-            "green",
-            "white"
-            ];
-            line += "<td class=\"left-border\" style=\"background:" + colors[cube[a]] + ";\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>";
-            line += "<td style=\"background:" + colors[cube[b]] + ";\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>";
-            line += "<td class=\"right-border\" style=\"background:" + colors[cube[c]] + ";\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>";
-            return line;
-    }
-    var empty_line = "<td></td><td></td><td></td>";
-    var table = "";
-    table += "<table border=\"0\">";
-
-    table += "<tr class=\"top-border\">";
-    table += empty_line;
-    table += get_one_line(0, 1, 2);
-    table += empty_line;
-    table += empty_line;
-    table += "</tr>";
-
-    table += "<tr>";
-    table += empty_line;
-    table += get_one_line(3, 4, 5);
-    table += empty_line;
-    table += empty_line;
-    table += "</tr>";
-
-    table += "<tr>";
-    table += empty_line;
-    table += get_one_line(6, 7, 8);
-    table += empty_line;
-    table += empty_line;
-    table += "</tr>";
-
-    table += "<tr class=\"top-border\">";
-    table += get_one_line(9, 10, 11);
-    table += get_one_line(18, 19, 20);
-    table += get_one_line(27, 28, 29);
-    table += get_one_line(36, 37, 38);
-    table += "</tr>";
-
-    table += "<tr>";
-    table += get_one_line(12, 13, 14);
-    table += get_one_line(21, 22, 23);
-    table += get_one_line(30, 31, 32);
-    table += get_one_line(39, 40, 41);
-    table += "</tr>";
-
-    table += "<tr class=\"bottom-border\">";
-    table += get_one_line(15, 16, 17);
-    table += get_one_line(24, 25, 26);
-    table += get_one_line(33, 34, 35);
-    table += get_one_line(42, 43, 44);
-    table += "</tr>";
-
-    table += "<tr>";
-    table += empty_line;
-    table += get_one_line(45, 46, 47);
-    table += empty_line;
-    table += empty_line;
-    table += "</tr>";
-
-    table += "<tr>";
-    table += empty_line;
-    table += get_one_line(48, 49, 50);
-    table += empty_line;
-    table += empty_line;
-    table += "</tr>";
-
-    table += "<tr>";
-    table += empty_line;
-    table += get_one_line(51, 52, 53);
-    table += empty_line;
-    table += empty_line;
-    table += "</tr>";
-
-    table += "</table>";
-    $("#table_2d").html(table);
 }
 
 function log(line) {

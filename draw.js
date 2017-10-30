@@ -1,5 +1,6 @@
 var SIZE = 40;
 var EDGE_SIZE = 3;
+var PADDING = 2;
 var colors = [
     "yellow",
     "DarkOrange",
@@ -10,44 +11,17 @@ var colors = [
 ];
 
 function draw_cube() {
-    var X_OFFSET = (canvas.width - 12 * SIZE) / 2;
-    var Y_OFFSET = (canvas.height - 9 * SIZE) / 2 + 3 * SIZE;
+    var X_OFFSET = (canvas.width - 12 * SIZE - 3 * PADDING) / 2;
+    var Y_OFFSET = (canvas.height - 9 * SIZE - 2 * PADDING) / 2 + 3 * SIZE;
     var PERSP = 1;
     var width = canvas.width - 2 * X_OFFSET;
-    
-    //ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    //ctx.rect(20,20,500,100);
-    //ctx.fillStyle="red";
-    //ctx.fill();
-
-    draw_side(X_OFFSET + 3 * SIZE, Y_OFFSET - 3 * SIZE, 0, 1);
+    draw_side(X_OFFSET + 3 * SIZE + PADDING, Y_OFFSET - 3 * SIZE - PADDING, 0, 1);
     draw_side(X_OFFSET, Y_OFFSET, 1, 1);
-    draw_side(X_OFFSET + 3 * SIZE, Y_OFFSET, 2, 1);
-    draw_side(X_OFFSET + 6 * SIZE, Y_OFFSET, 3, 1);
-    draw_side(X_OFFSET + 9 * SIZE, Y_OFFSET, 4, 1);
-    draw_side(X_OFFSET + 3 * SIZE, Y_OFFSET + 3 * SIZE, 5, 1);
-    //draw_side(X_OFFSET + 3 * SIZE, Y_OFFSET, 2, 1);
-    //draw_side(X_OFFSET + 3 * SIZE, Y_OFFSET + 3 * SIZE, 4, 1);
-    //draw_side(X_OFFSET + (6 + 1.5) * SIZE, Y_OFFSET - 1.5 * SIZE, 5, PERSP);
-/*
-    ctx.beginPath();
-    ctx.moveTo(X_OFFSET + 3 * SIZE, Y_OFFSET);
-    ctx.lineTo(X_OFFSET + (6 + 1.5) * SIZE - 3 * SIZE * PERSP, Y_OFFSET - 1.5 * SIZE);
-    ctx.lineTo(X_OFFSET + (6 + 1.5) * SIZE, Y_OFFSET - 1.5 * SIZE);
-
-    ctx.moveTo(X_OFFSET + 6 * SIZE, Y_OFFSET);
-    ctx.lineTo(X_OFFSET + (6 + 1.5) * SIZE, Y_OFFSET - 1.5 * SIZE); // good
-
-    ctx.moveTo(X_OFFSET + 6 * SIZE, Y_OFFSET + 3 * SIZE);
-    ctx.lineTo(X_OFFSET + (6 + 1.5) * SIZE, Y_OFFSET - 1.5 * SIZE + 3 * SIZE * PERSP); // good
-
-    ctx.moveTo(X_OFFSET + (4 + 0.5) * SIZE - SIZE * PERSP, Y_OFFSET - 0.5 * SIZE);
-    ctx.lineTo(X_OFFSET + (6 + 0.5) * SIZE, Y_OFFSET - 0.5 * SIZE);
-    ctx.lineTo(X_OFFSET + (6 + 0.5) * SIZE, Y_OFFSET + 3 * SIZE - 0.5 * SIZE / PERSP);
-
-    ctx.stroke();
-    */
+    draw_side(X_OFFSET + 3 * SIZE + PADDING, Y_OFFSET, 2, 1);
+    draw_side(X_OFFSET + 6 * SIZE + 2 * PADDING, Y_OFFSET, 3, 1);
+    draw_side(X_OFFSET + 9 * SIZE + 3 * PADDING, Y_OFFSET, 4, 1);
+    draw_side(X_OFFSET + 3 * SIZE + PADDING, Y_OFFSET + 3 * SIZE + PADDING, 5, 1);
 }
 
 function draw_one(x, y, size, idx) {
